@@ -41,6 +41,37 @@
             </intent-filter>
         </activity>
 
+		<activity android:name="ProjectBookmarks"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTBOOKMARKS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="ProjectNotes"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTNOTES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="ProjectSearches"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTSEARCHES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="ProjectSnippets"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTSNIPPETS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>

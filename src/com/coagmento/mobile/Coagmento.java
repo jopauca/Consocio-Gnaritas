@@ -28,7 +28,7 @@ public class Coagmento extends Activity {
         prefs = getApplicationContext().getSharedPreferences("preferences", MODE_PRIVATE);
         
         //Extract int from "userID" field in prefs. If no data, userID = 0
-        int userID = 3;//prefs.getInt("userID", 0);
+        int userID = prefs.getInt("userID", 0);
         
         //If user ID is 0, load login screen
         if (userID == 0) {

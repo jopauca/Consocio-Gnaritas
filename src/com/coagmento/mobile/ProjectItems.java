@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,17 +28,55 @@ public class ProjectItems extends Activity {
         ProjectDataParser parser = new ProjectDataParser();
         ProjectDataSet projectDataList = parser.parseProjData(projData.getInt("projID"));
 
-        	TextView bookmarks = (TextView) findViewById(R.id.numBookmarks);
-            TextView notes = (TextView) findViewById(R.id.numNotes);
-            TextView snippets = (TextView) findViewById(R.id.numSnippets);
-            TextView searches = (TextView) findViewById(R.id.numSearches);
+    	TextView bookmarks = (TextView) findViewById(R.id.numBookmarks);
+        TextView notes = (TextView) findViewById(R.id.numNotes);
+        TextView snippets = (TextView) findViewById(R.id.numSnippets);
+        TextView searches = (TextView) findViewById(R.id.numSearches);
 
-            bookmarks.append(" (" + projectDataList.getNumBookmarks() + ")");
-            notes.append(" (" + projectDataList.getNumNotes() + ")");
-            snippets.append(" (" + projectDataList.getNumSnippets() + ")");
-            searches.append(" (" + projectDataList.getNumSearches() + ")");
+        bookmarks.append(" (" + projectDataList.getNumBookmarks() + ")");
+        notes.append(" (" + projectDataList.getNumNotes() + ")");
+        snippets.append(" (" + projectDataList.getNumSnippets() + ")");
+        searches.append(" (" + projectDataList.getNumSearches() + ")");
     	        
+        Button bookmarksButton = (Button) findViewById(R.id.bookmarks);
+        bookmarksButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent toBookmarks = new Intent(ProjectItems.this,ProjectBookmarks.class);
+				toBookmarks.putExtras(projData);
+				startActivity(toBookmarks);
+			}
+		});
         
+        Button notesButton = (Button) findViewById(R.id.notes);
+        notesButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent toNotes= new Intent(ProjectItems.this,ProjectNotes.class);
+				toNotes.putExtras(projData);
+				startActivity(toNotes);
+			}
+		});
+        
+        Button snippetsButton = (Button) findViewById(R.id.snippets);
+        snippetsButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent toSnippets = new Intent(ProjectItems.this,ProjectSnippets.class);
+				toSnippets.putExtras(projData);
+				startActivity(toSnippets);
+			}
+		});
+        
+        Button searchesButton = (Button) findViewById(R.id.searches);
+        searchesButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent toSearches = new Intent(ProjectItems.this,ProjectSearches.class);
+				toSearches.putExtras(projData);
+				startActivity(toSearches);
+			}
+		});
         
         
         Button homeButton = (Button) findViewById(R.id.projitemshomeButton);

@@ -28,9 +28,15 @@
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="vertical">
 	</LinearLayout>
-	<TableLayout android:layout_width="fill_parent" android:id="@+id/tableLayout1"
-		android:layout_height="fill_parent" android:layout_marginTop="40dip"
+	
+	
+		<ScrollView android:id="@+id/scrollView1" android:layout_marginTop="20dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<TableLayout android:layout_width="fill_parent" android:id="@+id/bmarkListTable"
+		android:layout_height="fill_parent"
 		android:orientation="horizontal">
+		</TableLayout>
+		</ScrollView>
 		
-	</TableLayout>
+	
+	
 </LinearLayout>
