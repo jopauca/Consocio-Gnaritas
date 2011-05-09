@@ -2,12 +2,13 @@
 <manifest package="com.coagmento.mobile"
       android:versionCode="1"
       android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-sdk android:minSdkVersion="3" minSdkVersion="4"/>
+    <uses-sdk android:minSdkVersion="4" minSdkVersion="4"/>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <supports-screens android:largeScreens="true" android:smallScreens="false" android:normalScreens="true" android:resizeable="true"></supports-screens>
     
 
     <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+    
         <activity android:name=".Coagmento"
                   android:label="@string/app_name">
             <intent-filter>
@@ -15,6 +16,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+                <activity android:name="Home"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+         <activity android:name="Projects"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTLIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="ProjectItems"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.PROJECTITEMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
     </application>
 </manifest>
