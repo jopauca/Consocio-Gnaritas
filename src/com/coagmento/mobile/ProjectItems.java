@@ -22,9 +22,6 @@ public class ProjectItems extends Activity {
         
         final Bundle projData = this.getIntent().getExtras();
         
-        int test = projData.getInt("projID");
-        System.out.println(test);
-        
         ProjectDataParser parser = new ProjectDataParser();
         ProjectDataSet projectDataList = parser.parseProjData(projData.getInt("projID"));
 

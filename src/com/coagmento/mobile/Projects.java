@@ -47,9 +47,6 @@ public class Projects extends Activity {
     					//Create bundle containing project ID and then go to project items page
     					Bundle projData = new Bundle();
 			        	projData.putInt("projID", Integer.parseInt(v.getTag().toString()));
-			        	
-			        	int test = Integer.parseInt(v.getTag().toString());
-			        	
     			    	Intent elements = new Intent(Projects.this,ProjectItems.class);
     			    	elements.putExtras(projData);
     			    	startActivity(elements);
