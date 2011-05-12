@@ -22,6 +22,7 @@ public class Home extends Activity {
         TextView usernameText = (TextView) findViewById(R.id.homeUsernameText);
         usernameText.setText(userData.getString("username"));
         
+        
         //Set up log out button
         Button logout = (Button) findViewById(R.id.logoutButton);
         logout.setOnClickListener(new View.OnClickListener() {

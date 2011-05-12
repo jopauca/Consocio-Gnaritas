@@ -40,8 +40,8 @@ public class Coagmento extends Activity {
 				
 				@Override
 				public void onClick(View v) {
-					Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.coagmento.org/"));
-					startActivity(browser);
+					//Intent browser = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.coagmento.org/index.php?page=signup"));
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.coagmento.org/index.php?page=signup")));
 				}
 			});
         	

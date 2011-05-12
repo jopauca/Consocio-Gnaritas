@@ -81,9 +81,9 @@ public class ProjectItems extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast toast = Toast.makeText(getApplicationContext(), "Not implemented yet", Toast.LENGTH_SHORT);
-        		toast.show();
-				//startActivity(new Intent(ProjectItems.this, Home.class));
+				Intent backToHome = new Intent(ProjectItems.this, Home.class);
+				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(backToHome);
 			}
 		});
 		

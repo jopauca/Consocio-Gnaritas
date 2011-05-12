@@ -26,7 +26,7 @@ public class Projects extends Activity {
         
         //Parse data using userID from bundle
         ProjectListParser parser = new ProjectListParser();
-        LinkedList<ProjectListDataSet> projectList = parser.parseProjectList(3);//(userData.getInt("userID")); 
+        LinkedList<ProjectListDataSet> projectList = parser.parseProjectList(userData.getInt("userID")); 
         
         //Add buttons to table layout for each project
         TableLayout projectTable = (TableLayout) findViewById(R.id.projectsTable);
@@ -64,9 +64,9 @@ public class Projects extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Toast toast = Toast.makeText(getApplicationContext(), "Not implemented yet", Toast.LENGTH_SHORT);
-        		toast.show();
-				//startActivity(new Intent(Projects.this, Home.class));
+				Intent backToHome = new Intent(Projects.this, Home.class);
+				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(backToHome);
 			}
 		});
 		
