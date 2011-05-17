@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" 
@@ -14,7 +15,7 @@
 			android:layout_alignParentLeft="true" 
 			android:layout_marginLeft="5dip" 
 			android:layout_marginTop="4dip" 
-			android:background="@drawable/snips" 
+			android:background="@drawable/searches" 
 			android:layout_height="30dip" 
 			android:layout_width="30dip"></ImageView>
 		<TextView 
@@ -25,10 +26,11 @@
 			android:layout_alignBottom="@+id/imageView1"
 			android:layout_height="wrap_content" 
 			android:textColor="@color/white" 
-			android:text="Snippets" 
+			android:layout_marginTop="4dip"
+			android:text="Searches" 
+			android:layout_marginLeft="5dip" 
 			android:textSize="15sp" 
-			android:width="60dip" 
-			android:layout_marginLeft="5dip" android:layout_marginTop="5dip"></TextView>
+			android:width="70dip"></TextView>
 		<TableRow 
 			android:id="@+id/tableRow3" 
 			android:background="@color/lightGreen"
@@ -41,10 +43,10 @@
 			android:layout_centerHorizontal="true" 
 			android:layout_marginTop="4dip" 
 			android:background="@drawable/home"
-			android:id="@+id/snipshomeButton" 
+			android:id="@+id/searchhomeButton" 
 			android:layout_height="30dip" 
-			android:layout_marginRight="53dip" 
-			android:layout_width="30dip"></Button>
+			android:layout_width="30dip" 
+			android:layout_marginRight="53dip"></Button>
 		<TableRow 
 			android:id="@+id/tableRow4" 
 			android:background="@color/lightGreen"
@@ -56,10 +58,10 @@
 			android:background="@drawable/refresh"
 			android:layout_alignParentRight="true" 
 			android:layout_marginTop="4dip" 
-			android:id="@+id/snipsrefreshButton" 
+			android:id="@+id/searchrefreshButton" 
 			android:layout_height="30dip" 
-			android:layout_marginRight="8dip" 
-			android:layout_width="30dip"></Button>
+			android:layout_width="30dip" 
+			android:layout_marginRight="8dip"></Button>
 	</RelativeLayout>
 	<TableRow 
 		android:id="@+id/tableRow2" 
@@ -74,9 +76,9 @@
 	</LinearLayout>
 	<TableLayout 
 		android:layout_width="fill_parent" 
-		android:id="@+id/snipListTable"
+		android:id="@+id/searchListTable"
 		android:layout_height="fill_parent" 
-		android:layout_marginTop="30dip"
+		android:layout_marginTop="40dip"
 		android:orientation="horizontal">
 		<ListView 
 			android:layout_height="wrap_content"

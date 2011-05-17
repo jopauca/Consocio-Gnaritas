@@ -11,6 +11,8 @@ public class SnippetDataHandler extends DefaultHandler{
 	private boolean in_url = false;
 	private boolean in_date = false;
 	private boolean in_time = false;
+	private boolean in_content = false;
+	private boolean in_note = false;
 	
 	
 	LinkedList<SnippetDataSet> snippetData = new LinkedList<SnippetDataSet>();
@@ -45,6 +47,14 @@ public class SnippetDataHandler extends DefaultHandler{
 		{
 			this.in_time = true;
 		}
+		else if (localName.equals("content")) 
+		{
+			this.in_content = true;
+		}
+		else if (localName.equals("note"))
+		{
+			this.in_note = true;
+		}
 	}
 	
 	@Override
@@ -66,6 +76,14 @@ public class SnippetDataHandler extends DefaultHandler{
 		else if (localName.equals("time")) 
 		{
 			this.in_time = false;
+		}
+		else if (localName.equals("content"))
+		{
+			this.in_content = false;
+		}
+		else if (localName.equals("note"))
+		{
+			this.in_note = false;
 		}
 	}
 	
@@ -92,6 +110,14 @@ public class SnippetDataHandler extends DefaultHandler{
 		{
 			snippetData.getLast().setTime(data);
 		}	
+		else if (this.in_content)
+		{
+			snippetData.getLast().setContent(data);
+		}
+		else if (this.in_note) 
+		{
+			snippetData.getLast().setNote(data);
+		}
 	}
 	
 	public LinkedList<SnippetDataSet> getParsedData() 

@@ -22,11 +22,11 @@ public class Projects extends Activity {
         setContentView(R.layout.projects);
         
         //Get bundle containing user name and ID
-        final Bundle userData = this.getIntent().getExtras();
+        final Bundle appData = this.getIntent().getExtras();
         
         //Parse data using userID from bundle
         ProjectListParser parser = new ProjectListParser();
-        LinkedList<ProjectListDataSet> projectList = parser.parseProjectList(userData.getInt("userID")); 
+        LinkedList<ProjectListDataSet> projectList = parser.parseProjectList(appData.getInt("userID")); 
         
         //Add buttons to table layout for each project
         TableLayout projectTable = (TableLayout) findViewById(R.id.projectsTable);
@@ -45,10 +45,9 @@ public class Projects extends Activity {
     				public void onClick(View v) {
     					
     					//Create bundle containing project ID and then go to project items page
-    					Bundle projData = new Bundle();
-			        	projData.putInt("projID", Integer.parseInt(v.getTag().toString()));
+			        	appData.putInt("projID", Integer.parseInt(v.getTag().toString()));
     			    	Intent elements = new Intent(Projects.this,ProjectItems.class);
-    			    	elements.putExtras(projData);
+    			    	elements.putExtras(appData);
     			    	startActivity(elements);
     				}
     			});
@@ -64,9 +63,12 @@ public class Projects extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent backToHome = new Intent(Projects.this, Home.class);
+				Toast toast = Toast.makeText(getApplicationContext(), "Not implemented yet", Toast.LENGTH_SHORT);
+        		toast.show();
+				/*Intent backToHome = new Intent(Projects.this, Home.class);
 				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(backToHome);
+				*/
 			}
 		});
 		

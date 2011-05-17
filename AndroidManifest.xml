@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="com.coagmento.mobile"
       android:versionCode="1"
-      android:versionName="1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+      xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.01">
     <uses-sdk android:minSdkVersion="4" minSdkVersion="4"/>
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <supports-screens android:largeScreens="true" android:smallScreens="false" android:normalScreens="true" android:resizeable="true"></supports-screens>
@@ -21,6 +21,14 @@
                   android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+         <activity android:name="Collaborators"
+                  android:label="">
+            <intent-filter>
+                <action android:name="android.intent.action.COLLABORATORS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

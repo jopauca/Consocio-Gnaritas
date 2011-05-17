@@ -17,14 +17,14 @@ public class Home extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         
-        final Bundle userData = this.getIntent().getExtras();
+        final Bundle appData = this.getIntent().getExtras();
         
         TextView usernameText = (TextView) findViewById(R.id.homeUsernameText);
-        usernameText.setText(userData.getString("username"));
+        usernameText.append(appData.getString("username"));
         
         
         //Set up log out button
-        Button logout = (Button) findViewById(R.id.logoutButton);
+        Button logout = (Button) findViewById(R.id.homeLogoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -34,21 +34,58 @@ public class Home extends Activity {
                 prefEdit.putString("username", "");
                 prefEdit.putInt("userID", 0);
                 prefEdit.commit();
-                startActivity(new Intent(Home.this, Coagmento.class));
+                
+                //Create new intent with flag 'clear top'
+                //This is so user can't use back button to go back once logged out
+                Intent logout = new Intent(Home.this, Coagmento.class);
+                logout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logout);
+			}
+		});
+      //Set up log out button text
+        TextView logoutText = (TextView) findViewById(R.id.logoutText);
+        logoutText.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//Retrieve preferences and replace username with blank string and userID with 0, then go back to login
+				SharedPreferences prefs = getApplicationContext().getSharedPreferences("preferences", MODE_PRIVATE);
+				SharedPreferences.Editor prefEdit = prefs.edit();
+                prefEdit.putString("username", "");
+                prefEdit.putInt("userID", 0);
+                prefEdit.commit();
+                
+                //Create new intent with flag 'clear top'
+                //This is so user can't use back button to go back once logged out
+                Intent logout = new Intent(Home.this, Coagmento.class);
+                logout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(logout);
 			}
 		});
         
         
         //Set up projects button
-        Button proj = (Button) findViewById(R.id.projects);
+        Button proj = (Button) findViewById(R.id.projButton);
         proj.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				//Pass bundle containing user information to project list
 				Intent projectList = new Intent(Home.this, Projects.class);
-				projectList.putExtras(userData);
+				projectList.putExtras(appData);
 				startActivity(projectList);
+			}
+		});
+        
+      //Set up collaborators button
+        Button collabs = (Button) findViewById(R.id.collabButton);
+        collabs.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//Pass bundle containing user information to project list
+				Intent collaborators = new Intent(Home.this, Collaborators.class);
+				collaborators.putExtras(appData);
+				startActivity(collaborators);
 			}
 		});
     }

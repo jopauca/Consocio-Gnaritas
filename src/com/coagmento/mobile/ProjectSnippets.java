@@ -5,18 +5,18 @@ package com.coagmento.mobile;
 import java.util.LinkedList;
 
 import com.coagmento.parsers.BookmarkDataSet;
-import com.coagmento.parsers.BookmarkParser;
 import com.coagmento.parsers.SnippetDataSet;
 import com.coagmento.parsers.SnippetParser;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ProjectSnippets extends Activity {
 	
@@ -29,13 +29,50 @@ public class ProjectSnippets extends Activity {
         Bundle appData = this.getIntent().getExtras();
         
         SnippetParser parser = new SnippetParser();
-        LinkedList<SnippetDataSet> snippets = parser.parseSnippets(appData.getInt("projID"));
+        LinkedList<SnippetDataSet> snippets = parser.parseSnippets(appData.getInt("userID"),appData.getInt("projID"));
         
         TableLayout snipTable = (TableLayout) findViewById(R.id.snipListTable);
         
         for (SnippetDataSet snip : snippets) {
         	Button b = new Button(this);
         	b.setText(snip.getTitle());
+        	b.setTag(snip);
+        	
+        	b.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					 Dialog dialog = new Dialog(ProjectSnippets.this);
+		             dialog.setContentView(R.layout.snippetdialog);
+		             
+		             SnippetDataSet data = (SnippetDataSet) v.getTag();
+		             
+		             TextView snipDate = (TextView) dialog.findViewById(R.id.snipDialogDate);
+		             TextView snipTime = (TextView) dialog.findViewById(R.id.snipDialogTime);
+		             TextView snipURL = (TextView) dialog.findViewById(R.id.snipDialogURL);
+		             TextView snipContent = (TextView) dialog.findViewById(R.id.snipDialogContent);
+		             
+		             
+		             snipDate.append(data.getDate());
+		             snipTime.append(data.getTime());
+		             snipURL.append(data.getUrl());
+		             snipURL.setTag(data.getUrl());
+		             snipURL.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v2) {
+							Intent snippetToBrowser = new Intent(Intent.ACTION_VIEW, Uri.parse(v2.getTag().toString()));
+							startActivity(snippetToBrowser);
+						}
+					});
+		             //snipContent.append(data.getContent());
+		             String test = data.getContent();
+		             System.out.println();
+		             
+		             dialog.setCanceledOnTouchOutside(true);
+		             dialog.setTitle("Snippet");
+		             dialog.show();
+				}
+			});
         	
         	snipTable.addView(b);
         }

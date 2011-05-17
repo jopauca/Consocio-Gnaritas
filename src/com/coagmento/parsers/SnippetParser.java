@@ -12,7 +12,7 @@ import org.xml.sax.XMLReader;
 public class SnippetParser {
 	LinkedList<SnippetDataSet> snippetData;
 	
-	public LinkedList<SnippetDataSet> parseSnippets(int projID)
+	public LinkedList<SnippetDataSet> parseSnippets(int userID, int projID)
 	{
 		
 		try 

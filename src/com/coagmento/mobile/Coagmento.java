@@ -92,11 +92,11 @@ public class Coagmento extends Activity {
         } else {
         	//User ID is already stored
         	//Get data from prefs and bundle it for home activity
-        	Bundle userData = new Bundle();
-        	userData.putString("username", prefs.getString("username", "defUser"));
-        	userData.putInt("userID", prefs.getInt("userID", 0));
+        	Bundle appData = new Bundle();
+        	appData.putString("username", prefs.getString("username", "defUser"));
+        	appData.putInt("userID", prefs.getInt("userID", 0));
         	Intent home = new Intent(Coagmento.this, Home.class);
-        	home.putExtras(userData);
+        	home.putExtras(appData);
         	
         	startActivity(home);
         }

@@ -13,12 +13,12 @@ import org.xml.sax.XMLReader;
 public class BookmarkParser {
 	LinkedList<BookmarkDataSet> bookmarkData;
 	
-	public LinkedList<BookmarkDataSet> parseBookmarks(int projID)
+	public LinkedList<BookmarkDataSet> parseBookmarks(int userID, int projID)
 	{
 		
 		try 
 	    {
-	        URL url = new URL("http://www.coagmento.org/mobile/getBookmarks.php?projID=" + projID);
+	        URL url = new URL("http://www.coagmento.org/mobile/getBookmarks.php?userID=" + userID + "&projID=" + projID);
 	        
 	        SAXParserFactory pFactory = SAXParserFactory.newInstance();
 	        SAXParser pInstance = pFactory.newSAXParser();

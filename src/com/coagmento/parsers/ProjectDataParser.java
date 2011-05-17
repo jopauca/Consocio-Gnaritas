@@ -12,12 +12,12 @@ public class ProjectDataParser {
 	
 ProjectDataSet projectData;
 	
-	public ProjectDataSet parseProjData(int projID)
+	public ProjectDataSet parseProjData(int userID, int projID)
 	{
 		
 		try 
 	    {
-	        URL url = new URL("http://www.coagmento.org/mobile/projInfo.php?projID=" + projID);
+	        URL url = new URL("http://www.coagmento.org/mobile/projInfo.php?userID=" + userID + "&projID=" + projID);
 	        
 	        SAXParserFactory pFactory = SAXParserFactory.newInstance();
 	        SAXParser pInstance = pFactory.newSAXParser();

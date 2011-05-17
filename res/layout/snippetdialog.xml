@@ -3,17 +3,23 @@
  android:layout_width="wrap_content" android:layout_height="wrap_content"
  android:orientation="vertical">
  
-<ImageView android:id="@+id/ImageView01" android:src="@drawable/bookmarks"
+<ImageView android:id="@+id/ImageView02" android:src="@drawable/snips"
  android:layout_width="wrap_content" android:layout_marginBottom="14dip" android:layout_centerHorizontal="true" android:layout_height="wrap_content"/>
  
- <TextView android:text="Date: " android:id="@+id/bmDialogDate"
+ <TextView android:text="Date: " android:id="@+id/snipDialogDate"
  android:layout_width="wrap_content" android:layout_height="wrap_content" />
  
- <TextView android:text="Time: " android:id="@+id/bmDialogTime"
+ <TextView android:text="Time: " android:id="@+id/snipDialogTime"
  android:layout_width="wrap_content" android:layout_height="wrap_content" />
  
- <TextView android:text="URL: " android:id="@+id/bmDialogURL"
+ <TextView android:text="Notes: " android:id="@+id/snipDialogNotes"
+ android:layout_width="wrap_content" android:layout_height="wrap_content" />
+ 
+ <TextView android:text="URL: " android:id="@+id/snipDialogURL"
  android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/blueline"/>
+ 
+ <TextView android:text="Snippet: " android:id="@+id/snipDialogContent"
+ android:layout_width="wrap_content" android:layout_height="wrap_content" />
  
  
 </LinearLayout>

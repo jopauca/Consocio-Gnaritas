@@ -14,12 +14,12 @@ public class SearchParser {
 	
 		LinkedList<SearchDataSet> searchData;
 		
-		public LinkedList<SearchDataSet> parseSearches(int projID)
+		public LinkedList<SearchDataSet> parseSearches(int userID, int projID)
 		{
 			
 			try 
 		    {
-		        URL url = new URL("http://www.coagmento.org/mobile/getSearches.php?projID=" + projID);
+		        URL url = new URL("http://www.coagmento.org/mobile/getSearches.php?userID=" + userID + "projID=" + projID);
 		        
 		        SAXParserFactory pFactory = SAXParserFactory.newInstance();
 		        SAXParser pInstance = pFactory.newSAXParser();
@@ -34,6 +34,7 @@ public class SearchParser {
 		    } 
 		    catch (Exception e) 
 		    {
+		    	System.out.println(e);
 		    }
 		    
 		    return searchData;

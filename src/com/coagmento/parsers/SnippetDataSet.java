@@ -5,6 +5,8 @@ public class SnippetDataSet {
 	String url;
 	String date;
 	String time;
+	String content;
+	String note;
 	public String getTitle() {
 		return title;
 	}
@@ -29,6 +31,16 @@ public class SnippetDataSet {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	
-	
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
+	}
 }

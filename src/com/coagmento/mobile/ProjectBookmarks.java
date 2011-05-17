@@ -27,7 +27,7 @@ public class ProjectBookmarks extends Activity {
         Bundle appData = this.getIntent().getExtras();
         
         BookmarkParser parser = new BookmarkParser();
-        LinkedList<BookmarkDataSet> bookmarks = parser.parseBookmarks(appData.getInt("projID"));
+        LinkedList<BookmarkDataSet> bookmarks = parser.parseBookmarks(appData.getInt("userID"),appData.getInt("projID"));
         
         TableLayout bmTable = (TableLayout) findViewById(R.id.bmarkListTable);
         
@@ -42,8 +42,6 @@ public class ProjectBookmarks extends Activity {
 				public void onClick(View v) {
 					 Dialog dialog = new Dialog(ProjectBookmarks.this);
 		             dialog.setContentView(R.layout.bookmarkdialog);
-		             
-		             
 		             
 		             BookmarkDataSet data = (BookmarkDataSet) v.getTag();
 		             

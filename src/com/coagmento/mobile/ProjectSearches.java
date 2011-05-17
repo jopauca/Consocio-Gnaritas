@@ -1,8 +1,12 @@
 package com.coagmento.mobile;
 
 
-import com.coagmento.parsers.ProjectDataParser;
-import com.coagmento.parsers.ProjectDataSet;
+import java.util.LinkedList;
+
+import com.coagmento.parsers.SearchDataSet;
+import com.coagmento.parsers.SearchParser;
+import com.coagmento.parsers.SnippetDataSet;
+import com.coagmento.parsers.SnippetParser;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,9 +23,30 @@ public class ProjectSearches extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //GET HISTORY FILE setContentView(R.layout.searches);
+        setContentView(R.layout.searches);
         
- 
-    }
+        Bundle appData = this.getIntent().getExtras();
+        
+        SearchParser parser = new SearchParser();
+        LinkedList<SearchDataSet> searches = parser.parseSearches(appData.getInt("userID"),appData.getInt("projID"));
+        
+        TableLayout snipTable = (TableLayout) findViewById(R.id.searchListTable);
 
+        /*
+        System.out.println();
+        
+        for (SearchDataSet search : searches) {
+        	Button b = new Button(this);
+        	
+        	//
+        	String test = search.getQuery();
+        	System.out.println(test);
+        	
+        	b.setText(search.getQuery());
+        	b.setTag(search);
+        	
+        	snipTable.addView(b);
+        }*/
+
+    }
 }

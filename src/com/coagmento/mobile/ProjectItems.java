@@ -20,10 +20,10 @@ public class ProjectItems extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.projectitems);
         
-        final Bundle projData = this.getIntent().getExtras();
+        final Bundle appData = this.getIntent().getExtras();
         
         ProjectDataParser parser = new ProjectDataParser();
-        ProjectDataSet projectDataList = parser.parseProjData(projData.getInt("projID"));
+        ProjectDataSet projectDataList = parser.parseProjData(appData.getInt("userID"),appData.getInt("projID"));
 
     	TextView bookmarks = (TextView) findViewById(R.id.numBookmarks);
         TextView notes = (TextView) findViewById(R.id.numNotes);
@@ -40,7 +40,7 @@ public class ProjectItems extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent toBookmarks = new Intent(ProjectItems.this,ProjectBookmarks.class);
-				toBookmarks.putExtras(projData);
+				toBookmarks.putExtras(appData);
 				startActivity(toBookmarks);
 			}
 		});
@@ -50,7 +50,7 @@ public class ProjectItems extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent toNotes= new Intent(ProjectItems.this,ProjectNotes.class);
-				toNotes.putExtras(projData);
+				toNotes.putExtras(appData);
 				startActivity(toNotes);
 			}
 		});
@@ -60,7 +60,7 @@ public class ProjectItems extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent toSnippets = new Intent(ProjectItems.this,ProjectSnippets.class);
-				toSnippets.putExtras(projData);
+				toSnippets.putExtras(appData);
 				startActivity(toSnippets);
 			}
 		});
@@ -70,7 +70,7 @@ public class ProjectItems extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent toSearches = new Intent(ProjectItems.this,ProjectSearches.class);
-				toSearches.putExtras(projData);
+				toSearches.putExtras(appData);
 				startActivity(toSearches);
 			}
 		});
@@ -81,9 +81,11 @@ public class ProjectItems extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent backToHome = new Intent(ProjectItems.this, Home.class);
-				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(backToHome);
+				Toast toast = Toast.makeText(getApplicationContext(), "Not implemented yet", Toast.LENGTH_SHORT);
+        		toast.show();
+				//Intent backToHome = new Intent(ProjectItems.this, Home.class);
+				//backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				//startActivity(backToHome);
 			}
 		});
 		
