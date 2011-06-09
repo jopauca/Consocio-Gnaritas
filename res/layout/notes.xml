@@ -14,12 +14,12 @@
 			android:background="@color/lightGreen"
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="228dip"></TableRow>
-		<Button android:layout_alignParentRight="true" android:layout_centerHorizontal="true" android:layout_marginRight="58dip" android:layout_height="19dip" android:layout_width="19dip" android:layout_marginTop="4dip" android:background="@drawable/home" android:id="@+id/noteshomeButton"></Button>
+		<Button android:layout_alignParentRight="true" android:layout_centerHorizontal="true" android:layout_marginRight="58dip" android:layout_height="19dip" android:layout_width="19dip" android:layout_marginTop="4dip" android:background="@drawable/homebutton" android:id="@+id/noteshomeButton"></Button>
 		<TableRow android:id="@+id/tableRow4"
 			android:background="@color/lightGreen"
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="275dip"></TableRow>
-		<Button android:background="@drawable/refresh"
+		<Button android:background="@drawable/refreshbutton"
 			android:layout_alignParentRight="true" android:layout_marginRight="10dip" android:layout_height="19dip" android:layout_width="19dip" android:layout_marginTop="4dip" android:id="@+id/notesrefreshButton"></Button>
 	</RelativeLayout>
 	<LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:orientation="horizontal" android:layout_height="50dip">

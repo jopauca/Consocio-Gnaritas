@@ -17,13 +17,13 @@
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="228dip"></TableRow>
 		<Button android:id="@+id/projecthomeButton"
-			android:layout_alignParentRight="true" android:background="@drawable/home"
+			android:layout_alignParentRight="true" android:background="@drawable/homebutton"
 			android:layout_centerHorizontal="true" android:layout_marginRight="54dip" android:layout_height="29dip" android:layout_width="29dip" android:layout_marginTop="4dip"></Button>
 		<TableRow android:id="@+id/tableRow4"
 			android:background="@color/lightGreen"
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="275dip"></TableRow>
-		<Button android:id="@+id/projectrefreshButton" android:background="@drawable/refresh"
+		<Button android:id="@+id/projectrefreshButton" android:background="@drawable/refreshbutton"
 			android:layout_alignParentRight="true" android:layout_marginRight="5dip" android:layout_height="29dip" android:layout_width="29dip" android:layout_marginTop="4dip"></Button>
 	</RelativeLayout>
 	<TableRow android:id="@+id/tableRow2" android:layout_width="fill_parent"

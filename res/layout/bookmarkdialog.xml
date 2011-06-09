@@ -3,17 +3,22 @@
  android:layout_width="wrap_content" android:layout_height="wrap_content"
  android:orientation="vertical">
  
-<ImageView android:id="@+id/ImageView01" android:src="@drawable/bookmarks"
- android:layout_width="wrap_content" android:layout_marginBottom="14dip" android:layout_centerHorizontal="true" android:layout_height="wrap_content"/>
- 
- <TextView android:text="Date: " android:id="@+id/bmDialogDate"
- android:layout_width="wrap_content" android:layout_height="wrap_content" />
- 
- <TextView android:text="Time: " android:id="@+id/bmDialogTime"
- android:layout_width="wrap_content" android:layout_height="wrap_content" />
- 
- <TextView android:text="URL: " android:id="@+id/bmDialogURL"
- android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/blueline"/>
+
+ <ScrollView android:layout_height="wrap_content" android:id="@+id/scrollView1" android:layout_width="fill_parent">
+     <LinearLayout android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
+		<ImageView android:id="@+id/ImageView01" android:src="@drawable/bookmarks"
+		 android:layout_width="wrap_content" android:layout_marginBottom="14dip" android:layout_centerHorizontal="true" android:layout_height="wrap_content"/>
+		 
+		 <TextView android:text="Date: " android:id="@+id/bmDialogDate"
+		 android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		 
+		 <TextView android:text="Time: " android:id="@+id/bmDialogTime"
+		 android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		 
+		 <TextView android:text="URL: " android:id="@+id/bmDialogURL"
+		 android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/blueline"/>     
+     </LinearLayout>
+ </ScrollView>
  
  
 </LinearLayout>

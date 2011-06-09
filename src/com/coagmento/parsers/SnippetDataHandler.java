@@ -7,16 +7,15 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class SnippetDataHandler extends DefaultHandler{
-	private boolean in_title = false;
-	private boolean in_url = false;
-	private boolean in_date = false;
-	private boolean in_time = false;
-	private boolean in_content = false;
-	private boolean in_note = false;
-	
 	
 	LinkedList<SnippetDataSet> snippetData = new LinkedList<SnippetDataSet>();
 	
+	private boolean in_title;
+	private boolean in_url;
+	private boolean in_date;
+	private boolean in_time;
+	private boolean in_content;
+	private boolean in_note;
 	
 	public void startDocment() throws SAXException 
 	{
@@ -31,6 +30,12 @@ public class SnippetDataHandler extends DefaultHandler{
 	//method is called when parser gets to an opening tag
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException 
 	{
+		
+		if (localName.equals("snippet")) 
+		{
+			snippetData.add(new SnippetDataSet());
+		} 
+		
 		if (localName.equals("title")) 
 		{
 			this.in_title = true;
@@ -95,7 +100,6 @@ public class SnippetDataHandler extends DefaultHandler{
 		
 		if (this.in_title) 
 		{
-			snippetData.add(new SnippetDataSet());
 			snippetData.getLast().setTitle(data);
 		} 
 		else if (this.in_url) 
@@ -118,7 +122,7 @@ public class SnippetDataHandler extends DefaultHandler{
 		{
 			snippetData.getLast().setNote(data);
 		}
-	}
+		}
 	
 	public LinkedList<SnippetDataSet> getParsedData() 
 	{

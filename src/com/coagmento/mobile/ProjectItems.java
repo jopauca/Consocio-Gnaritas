@@ -75,17 +75,26 @@ public class ProjectItems extends Activity {
 			}
 		});
         
+        Button backToProj = (Button) findViewById(R.id.backToProjects);
+        backToProj.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Intent backToProjList = new Intent(ProjectItems.this,Projects.class);
+				backToProjList.putExtras(appData);
+				startActivity(backToProjList);
+			}
+		});
+        
         
         Button homeButton = (Button) findViewById(R.id.projitemshomeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Toast toast = Toast.makeText(getApplicationContext(), "Not implemented yet", Toast.LENGTH_SHORT);
-        		toast.show();
-				//Intent backToHome = new Intent(ProjectItems.this, Home.class);
-				//backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				//startActivity(backToHome);
+				Intent backToHome = new Intent(ProjectItems.this, Home.class);
+				backToHome.putExtras(appData);
+				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(backToHome);
 			}
 		});
 		

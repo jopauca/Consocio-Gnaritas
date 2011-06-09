@@ -38,7 +38,7 @@
 		<Button 
 			android:layout_alignParentRight="true"
 			android:layout_centerHorizontal="true" 
-			android:background="@drawable/home" 
+			android:background="@drawable/homebutton" 
 			android:id="@+id/collabhomeButton"
 			android:layout_height="30dip" 
 			android:layout_width="30dip"
@@ -50,7 +50,7 @@
 			android:visibility="visible"
 			android:layout_height="fill_parent" 
 			android:layout_marginLeft="275dip"></TableRow>
-		<Button android:background="@drawable/refresh"
+		<Button android:background="@drawable/refreshbutton"
 			android:layout_alignParentRight="true" 
 			android:layout_marginTop="4dip"
 			android:id="@+id/collabrefreshButton" 

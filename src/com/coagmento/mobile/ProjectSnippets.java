@@ -1,10 +1,8 @@
 package com.coagmento.mobile;
 
 
-
 import java.util.LinkedList;
 
-import com.coagmento.parsers.BookmarkDataSet;
 import com.coagmento.parsers.SnippetDataSet;
 import com.coagmento.parsers.SnippetParser;
 
@@ -26,7 +24,7 @@ public class ProjectSnippets extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.snips);
         
-        Bundle appData = this.getIntent().getExtras();
+        final Bundle appData = this.getIntent().getExtras();
         
         SnippetParser parser = new SnippetParser();
         LinkedList<SnippetDataSet> snippets = parser.parseSnippets(appData.getInt("userID"),appData.getInt("projID"));
@@ -51,8 +49,9 @@ public class ProjectSnippets extends Activity {
 		             TextView snipTime = (TextView) dialog.findViewById(R.id.snipDialogTime);
 		             TextView snipURL = (TextView) dialog.findViewById(R.id.snipDialogURL);
 		             TextView snipContent = (TextView) dialog.findViewById(R.id.snipDialogContent);
+		             TextView snipNote = (TextView) dialog.findViewById(R.id.snipDialogNotes);
 		             
-		             
+		             snipNote.append(data.getNote());
 		             snipDate.append(data.getDate());
 		             snipTime.append(data.getTime());
 		             snipURL.append(data.getUrl());
@@ -64,9 +63,8 @@ public class ProjectSnippets extends Activity {
 							startActivity(snippetToBrowser);
 						}
 					});
-		             //snipContent.append(data.getContent());
-		             String test = data.getContent();
-		             System.out.println();
+		             snipContent.append(data.getContent());
+		             
 		             
 		             dialog.setCanceledOnTouchOutside(true);
 		             dialog.setTitle("Snippet");
@@ -76,6 +74,19 @@ public class ProjectSnippets extends Activity {
         	
         	snipTable.addView(b);
         }
+        
+        //Set up button to go back to home
+        Button homeButton = (Button) findViewById(R.id.snipshomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent backToHome = new Intent(ProjectSnippets.this, Home.class);
+				backToHome.putExtras(appData);
+				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(backToHome);
+			}
+		});
     }
 
 }

@@ -1,12 +1,12 @@
 package com.coagmento.parsers;
 
 public class SnippetDataSet {
-	String title;
-	String url;
-	String date;
-	String time;
-	String content;
-	String note;
+	String title = "";
+	String url = "";
+	String date = "";
+	String time = "";
+	String content = "";
+	String note = "";
 	public String getTitle() {
 		return title;
 	}

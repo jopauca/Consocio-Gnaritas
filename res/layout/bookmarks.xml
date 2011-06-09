@@ -14,12 +14,12 @@
 			android:background="@color/lightGreen"
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="228dip"></TableRow>
-		<Button android:layout_alignParentRight="true" android:layout_centerHorizontal="true" android:layout_marginRight="54dip" android:layout_height="29dip" android:layout_width="29dip" android:layout_marginTop="4dip" android:id="@+id/bookmarkhomeButton" android:background="@drawable/home"></Button>
+		<Button android:layout_alignParentRight="true" android:layout_centerHorizontal="true" android:layout_marginRight="54dip" android:layout_height="29dip" android:layout_width="29dip" android:layout_marginTop="4dip" android:id="@+id/bookmarkhomeButton" android:background="@drawable/homebutton"></Button>
 		<TableRow android:id="@+id/tableRow4"
 			android:background="@color/lightGreen"
 			android:layout_width="1dip" android:visibility="visible"
 			android:layout_height="fill_parent" android:layout_marginLeft="275dip"></TableRow>
-		<Button android:background="@drawable/refresh"
+		<Button android:background="@drawable/refreshbutton"
 			android:layout_alignParentRight="true" android:layout_marginRight="5dip" android:layout_height="29dip" android:layout_width="29dip" android:layout_marginTop="4dip" android:id="@+id/bookmarkrefreshButton"></Button>
 	</RelativeLayout>
 	<TableRow android:id="@+id/tableRow2" android:layout_width="fill_parent"

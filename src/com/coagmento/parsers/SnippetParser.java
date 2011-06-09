@@ -17,7 +17,7 @@ public class SnippetParser {
 		
 		try 
 	    {
-	        URL url = new URL("http://www.coagmento.org/mobile/getSnippets.php?projID=" + projID);
+	        URL url = new URL("http://www.coagmento.org/mobile/getSnippets.php?userID=" + userID + "&projID=" + projID);
 	        
 	        SAXParserFactory pFactory = SAXParserFactory.newInstance();
 	        SAXParser pInstance = pFactory.newSAXParser();
@@ -30,8 +30,8 @@ public class SnippetParser {
 	        
 	        snippetData = sHandler.getParsedData();
 	    } 
-	    catch (Exception e) 
-	    {
+	    catch (Exception e) {
+	    	
 	    }
 	    
 	    return snippetData;

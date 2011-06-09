@@ -24,7 +24,7 @@ public class ProjectBookmarks extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bookmarks);
         
-        Bundle appData = this.getIntent().getExtras();
+        final Bundle appData = this.getIntent().getExtras();
         
         BookmarkParser parser = new BookmarkParser();
         LinkedList<BookmarkDataSet> bookmarks = parser.parseBookmarks(appData.getInt("userID"),appData.getInt("projID"));
@@ -69,6 +69,19 @@ public class ProjectBookmarks extends Activity {
         	bmTable.addView(b);
         }
  
+        //Set up button to go back to home
+        Button homeButton = (Button) findViewById(R.id.bookmarkhomeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent backToHome = new Intent(ProjectBookmarks.this, Home.class);
+				backToHome.putExtras(appData);
+				backToHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(backToHome);
+			}
+		});
+        
     }
 
 }

@@ -41,7 +41,7 @@
 			android:layout_alignRight="@+id/homeLogoutButton"></TextView>
 		<Button android:id="@+id/homeLogoutButton"
 			android:layout_alignParentRight="true" 
-			android:background="@drawable/logout"
+			android:background="@drawable/logoutbutton"
 			android:layout_marginRight="10dip" 
 			android:layout_height="23dip"
 			android:layout_width="23dip" 
@@ -62,7 +62,7 @@
 			android:id="@+id/projButton"
 			android:layout_centerVertical="true" 
 			android:layout_centerHorizontal="true"
-			android:background="@drawable/projects" 
+			android:background="@drawable/projectsbutton" 
 			android:layout_height="77dip"
 			android:layout_width="77dip">
 		</Button>
@@ -95,7 +95,7 @@
 		<Button android:id="@+id/collabButton"
 			android:layout_alignParentTop="true" 
 			android:layout_centerHorizontal="true"
-			android:background="@drawable/collaborators" 
+			android:background="@drawable/collaboratorsbutton" 
 			android:layout_height="75dip"
 			android:layout_width="75dip">
 		</Button>

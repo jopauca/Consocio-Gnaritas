@@ -19,7 +19,7 @@ public class SearchParser {
 			
 			try 
 		    {
-		        URL url = new URL("http://www.coagmento.org/mobile/getSearches.php?userID=" + userID + "projID=" + projID);
+		        URL url = new URL("http://www.coagmento.org/mobile/getSearches.php?userID=" + userID + "&projID=" + projID);
 		        
 		        SAXParserFactory pFactory = SAXParserFactory.newInstance();
 		        SAXParser pInstance = pFactory.newSAXParser();
